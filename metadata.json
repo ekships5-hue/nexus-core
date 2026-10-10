@@ -1,0 +1,6 @@
+{
+  "name": "NEXUS Core",
+  "description": "Neural Evolutionary eXchange Unified System - Advanced AGI-inspired full-stack dashboard, learning, memory and agent coordination network.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
