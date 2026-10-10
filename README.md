@@ -4,11 +4,13 @@
 
 Built with React 19 + Vite + Express + Gemini + Tailwind.
 
-## Run locally (Mac / Windows / Linux)
+**Repository:** https://github.com/ekships5-hue/nexus-core
 
-**Prerequisites:** Node.js 18+
+## Quick start
 
 ```bash
+git clone https://github.com/ekships5-hue/nexus-core.git
+cd nexus-core
 npm install
 ```
 
@@ -22,27 +24,42 @@ GEMINI_API_KEY=your_key_here
 npm run dev
 ```
 
-Open the URL shown in the terminal (usually `http://localhost:3000`).
+Open http://localhost:3000
 
-## Use on iPhone / iPad (iOS)
+## Complete source
 
-### Option A — Add to Home Screen (PWA)
+This repo includes project config, README, design system CSS, types, and entry files.
 
-1. Deploy or host the app (or use a tunnel like ngrok while developing).
-2. Open the site in **Safari** on iPhone/iPad.
-3. Tap **Share** → **Add to Home Screen**.
-4. NEXUS opens like a native app (standalone, no Safari chrome).
+For the **full application source** (`server.ts`, `src/App.tsx`, and all components), use the project zip from your workspace:
 
-### Option B — Native shell with Capacitor (Xcode)
-
-On a Mac with Xcode installed:
+1. Download **nexus-core-ios.zip**
+2. Unzip it
+3. Copy these into your clone:
 
 ```bash
-npm install && npm run build
-npm install @capacitor/core @capacitor/cli @capacitor/ios
-npx cap init "NEXUS Core" com.nexus.core --web-dir dist
-npx cap add ios && npx cap sync ios && npx cap open ios
+# From the unzipped folder
+cp server.ts /path/to/nexus-core/
+cp -r src/App.tsx src/components /path/to/nexus-core/src/
+cd /path/to/nexus-core
+git add .
+git commit -m "Add full application source"
+git push
 ```
+
+Or run everything directly from the unzipped folder without GitHub:
+
+```bash
+cd nexus-core
+npm install
+echo 'GEMINI_API_KEY=your_key' > .env.local
+npm run dev
+```
+
+## iPhone / iPad
+
+1. Run the app (or deploy it)
+2. Open the URL in **Safari**
+3. Share → **Add to Home Screen**
 
 ## Features
 
@@ -51,27 +68,14 @@ npx cap add ios && npx cap sync ios && npx cap open ios
 - Voice mode (Web Speech API)
 - Memory grid, knowledge base, agent monitor
 - Self-improvement / reflections
-- Dark / light theme toggle (persisted)
-- Mobile-responsive sidebar
+- Dark / light theme toggle
+- Mobile-responsive sidebar + iOS PWA meta tags
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Dev server (Express + Vite) |
+| `npm run dev` | Dev server |
 | `npm run build` | Production build |
-| `npm start` | Run production server |
+| `npm start` | Run production |
 | `npm run lint` | Typecheck |
-
-## Project structure
-
-```
-nexus-core/
-├── server.ts
-├── src/
-│   ├── App.tsx
-│   ├── components/
-│   └── index.css
-├── public/manifest.json
-└── index.html
-```
